@@ -1,4 +1,3 @@
-import autonote_config as ac
 from notion_client import Client
 import pprint
 
