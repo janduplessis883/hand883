@@ -7,7 +7,7 @@ requirements = [x.strip() for x in content]
 
 setup(
     name='hand883',
-    version="0.0.4",
+    version="0.0.5",
     description="Helper Python Package for janduplessis883",
     packages=find_packages(),
     install_requires=requirements,
