@@ -4,11 +4,6 @@ import gspread
 from google.oauth2 import service_account
 import datetime
 import matplotlib.pyplot as plt
-import os
-import base64
-
-encoded = os.getenv("GOOGLE_SECRET_JSON")
-decoded = base64.b64decode(encoded).decode("utf-8")
 
 
 class SheetHelper:
@@ -20,8 +15,10 @@ class SheetHelper:
         self.sheet_instance = self.authenticate(sheet_url, sheet_id)
 
     def authenticate(self, sheet_url, sheet_id):
-
-        credentials = service_account.Credentials.from_service_account_file(decoded)
+        secret_file_path = "/Users/janduplessis/code/janduplessis883/AutoNote/secret/google_sheets_secret.json"
+        credentials = service_account.Credentials.from_service_account_file(
+            secret_file_path
+        )
         scope = [
             "https://spreadsheets.google.com/feeds",
             "https://www.googleapis.com/auth/drive",
