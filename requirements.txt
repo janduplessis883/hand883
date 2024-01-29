@@ -34,3 +34,4 @@ pytest
 # Package specific
 streamlit==1.30.0
 black
+plotly
